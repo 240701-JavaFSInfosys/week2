@@ -1,10 +1,9 @@
 import com.revature.Calculator;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
-
+//easy way to order our tests. check the @Order annotations below
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class CalculatorTests {
 
     //Uninitialized instance of Calculator that we'll instantiate for each test
@@ -28,6 +27,7 @@ public class CalculatorTests {
     //@AfterAll, @AfterEach
 
     //positive test for the add() method
+    @Order(4)
     @Test
     public void testAdd(){
         int result = calc.add(5, 10);
@@ -35,6 +35,7 @@ public class CalculatorTests {
     }
 
     //another positive test for the add() method, this time using assertNotEquals
+    @Order(3)
     @Test
     public void testAdd2(){
         int result = calc.add(5, 10);
@@ -46,6 +47,7 @@ public class CalculatorTests {
 
     //positive and negative test for the divide() method
     //HEY look we have two assertions in one test case! More elegant since they're testing the same thing
+    @Order(2)
     @Test
     public void testDivide(){
         int result = calc.divide(10, 2);
@@ -54,12 +56,11 @@ public class CalculatorTests {
     }
 
     //test for divide by zero (which should throw an IllegalArgumentException)
+    @Order(1)
     @Test
     public void testDivideByZero(){
         assertThrows(IllegalArgumentException.class, () -> calc.divide(10, 0));
         //assertThrows expects an "executable" which is basically just something that can be run
     }
-
-    //TODO: Ben will remember how to suggest order for tests to run
 
 }
