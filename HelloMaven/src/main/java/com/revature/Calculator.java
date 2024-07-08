@@ -22,8 +22,11 @@ public class Calculator {
     public int divide(int a, int b){
 
         if(b == 0){
+            log.warn("Hey heads up, some bozo is about to try dividing by zero lol");
             throw new IllegalArgumentException("User tried to divide by zero... get a load of this guy hahahahahah");
         }
+
+        log.info("Dividing {} by {}", a, b);
         return a / b;
 
     }

@@ -1,2 +1,6 @@
 15:19:57.730 [main] INFO  com.revature.Calculator - Adding 5 and 10
 15:19:57.750 [main] INFO  com.revature.Calculator - Adding 5 and 10
+15:23:44.304 [main] WARN  com.revature.Calculator - Hey heads up, some bozo is about to try dividing by zero lol
+15:23:44.352 [main] INFO  com.revature.Calculator - Dividing 10 by 2
+15:23:44.361 [main] INFO  com.revature.Calculator - Adding 5 and 10
+15:23:44.369 [main] INFO  com.revature.Calculator - Adding 5 and 10
