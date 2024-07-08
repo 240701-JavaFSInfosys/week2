@@ -1,5 +1,8 @@
 package com.revature;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Calculator {
 
     /* A better calculator would have more than just add and divide of course
@@ -8,7 +11,11 @@ public class Calculator {
      1) Unit Testing with JUnit
      2) Logging with Logback */
 
+    //to use logback, we need to instantiate a Logger object
+    private static final Logger log = LoggerFactory.getLogger(Calculator.class);
+
     public int add(int a, int b){
+        log.info("Adding {} and {}", a, b);
         return a + b;
     }
 
